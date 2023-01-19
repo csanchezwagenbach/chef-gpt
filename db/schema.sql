@@ -1,0 +1,4 @@
+DROP DATABASE IF EXISTS chef_db;
+CREATE DATABASE chef_db;
+
+USE chef_db;
