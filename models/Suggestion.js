@@ -32,6 +32,14 @@ Suggestion.init(
             type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW
+        },
+        prompt_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: "Prompt",
+                key: "id"
+            }
         }
     },
     {
