@@ -62,5 +62,12 @@ User.belongsToMany(Prompt, {
     unique: false,
   },
 });
+Suggestion.belongsTo(User, {
+  foreignKey: "user_id",
+});
+User.hasMany(Suggestion, {
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
+});
 
 module.exports = { Ingredient, Prompt, Restriction, Suggestion, User };
