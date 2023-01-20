@@ -1,0 +1,17 @@
+.navbar {
+    background-color: rgb(68, 131, 108);
+    
+}
+
+.navbar-brand{
+    font-size: 30px;
+}
+.intro {
+    font-size: 70px;
+}
+
+.intro{
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
