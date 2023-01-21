@@ -5,12 +5,6 @@ const Prompt = require("./Prompt");
 const Restriction = require("./Restriction");
 const User = require("./User");
 
-//use models
-router.use("/user", userRoutes);
-router.use("/ingredient", ingredientRoutes);
-router.use("/restriction", restrictionRoutes);
-router.use("/suggestion", suggestionRoutes);
-router.use("/prompt", promptRoutes);
 
 //belongsToMany's
 User.belongsToMany(Ingredient, {
