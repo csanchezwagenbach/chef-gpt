@@ -1,9 +1,12 @@
-{{#each suggestions as |Suggestions|}}
+<p>Profile</p>
+{{#if suggestions.length}}
+
+{{#each suggestions as |suggestion|}}
   <div class="card" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title">{{suggestions.title}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">{{suggestions.minutes}}</h6>
-      <h6 class="card-subtitle mb-2 text-muted">{{ingredients}}</h6>
+      <h5 class="card-title">{{suggestion.name}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{suggestion.minutes}}</h6>
+      {{!-- <h6 class="card-subtitle mb-2 text-muted">{{ingredients}}</h6> --}}
       <p class="card-text">Some quick example text to build on the card title
         and make up the bulk of the card's content.</p>
       <a href="#" class="card-link">Card link</a>
@@ -11,4 +14,5 @@
     </div>
   </div>
 {{/each}}
+{{/if}}
 
