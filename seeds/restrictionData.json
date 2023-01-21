@@ -1,0 +1,35 @@
+[
+    {
+        "name": "Nut Allergy"
+    },
+    {
+        "name": "Low Sodium"
+    },
+    {
+        "name": "Low Sugar"
+    },
+    {
+        "name": "Vegetarian"
+    },
+    {
+        "name": "Vegan"
+    },
+    {
+        "name": "Lactose Intolerance"
+    },
+    {
+        "name": "Gluten-Free"
+    },
+    {
+        "name": "Kosher"
+    },
+    {
+        "name": "Halal"
+    },
+    {
+        "name": "Keto"
+    },
+    {
+        "name": "Paleo"
+    }
+]
