@@ -9,7 +9,7 @@
     {
         "name": "Pork Enchilada",
         "content": "Why don't you try and turn that into an enchilada?",
-        "minues": 45,
+        "minutes": 45,
         "is_public": false,
         "prompt_id": 3
     },
