@@ -21,15 +21,19 @@
     <nav class="navbar navbar-light bg-primary d-flex container-fluid">      
         <a class="navbar-brand">🍳 CHEF GPT</a>
         <div class=" gap-3">
-        <button class="btn btn-outline-dark" type="button">HOME</button>
-        <button class="btn btn-outline-dark" type="button">DASHBOARD</button>
-        <button class="btn btn-outline-dark" type="button">NEW SUGGESTIONS</button>
-        <button class="btn btn-outline-dark" type="button">LOG OUT</button>
+        <a class="btn btn-outline-dark" href="/" role="button">HOME</a>
+        {{#if logged_in}}
+        <a class="btn btn-outline-dark" href="/profile" role="button">DASHBOARD</a>
+        <a class="btn btn-outline-dark" href="#" role="button">NEW SUGGESTIONS</a>
+        <a class="btn btn-outline-dark" href="#" role="button">LOG OUT</a>
+        {{else}}
+        <a class="btn btn-outline-dark" href="/login" id="login">Log in</a>
+        {{/if}}
       </form>
     </nav>
 
 <!--Log in Logic-->
-    <div class="flex-column justify-space-around">
+    {{!-- <div class="flex-column justify-space-around">
       <header class="display-flex justify-space-between align-center p-2">
         <nav>
           <!-- Conditionally render login or logout links -->
@@ -40,7 +44,7 @@
           <a href="/login">login</a>
           {{/if}}
         </nav>
-      </header>
+      </header> --}}
       <main class="container container-fluid mt-5">
           {{{body}}}
       </main>

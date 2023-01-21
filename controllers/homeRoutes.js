@@ -1,10 +1,11 @@
 const router = require("express").Router();
 const { User, Prompt, Suggestion, Restriction, Ingredient } = require("../models");
+const withAuth = require("../utils/auth");
 
 
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
     try {
-        res.render("homepage")
+        res.render("homepage", { logged_in: true })
     } catch (err) {
         res.status(500).json(err)
     }
