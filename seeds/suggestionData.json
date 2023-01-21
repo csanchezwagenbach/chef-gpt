@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Roast Beef Sandwich Lunch",
+        "content": "Try making a really yummy sandwich!",
+        "minutes": 10,
+        "is_public": false,
+        "prompt_id": 1
+    },
+    {
+        "name": "Pork Enchilada",
+        "content": "Why don't you try and turn that into an enchilada?",
+        "minues": 45,
+        "is_public": false,
+        "prompt_id": 3
+    },
+    {
+        "name": "Icee Freeze",
+        "content": "You're in for a really yummy treat!",
+        "minutes": 65,
+        "is_public": false,
+        "prompt_id": 1
+    },
+    {
+        "name": "Pork Stir Fry",
+        "content": "Tonight you'll be preparing a delicious stir fry.",
+        "minutes": 20,
+        "is_public": false,
+        "prompt_id": 2
+    }
+]
