@@ -2,7 +2,7 @@
 {{#if suggestions.length}}
 
 {{#each suggestions as |suggestion|}}
-  <div class="card" data-number={{suggestion.id}} style="width: 18rem;">
+  <div class="card suggestion-card" data-number={{suggestion.id}} style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">{{suggestion.name}}</h5>
       <h6 class="card-subtitle mb-2 text-muted">{{suggestion.minutes}}</h6>
@@ -16,3 +16,4 @@
 {{/each}}
 {{/if}}
 
+<script src="./js/profile.js"</script>

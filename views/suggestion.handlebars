@@ -1,11 +1,11 @@
 <div class="card text-white bg-secondary mx-auto" style="width: 18rem">
-  {{#if suggestions.length}}
-  <div class="card-header">Suggestions</div>
+  {{#if suggestion}}
+  <div class="card-header">{{suggestion.name}}</div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">{{prompt.content}}</li>
-    <li class="list-group-item">{{suggestions.content}}</li>
-    <li class="list-group-item">{{ingredients.name}}</li>
-    <li class="list-group-item">{{restrictions.name}}</li>
+    <li class="list-group-item">{{suggestion.content}}</li>
+    <li class="list-group-item">{{ingredient.name}}</li>
+    <li class="list-group-item">{{restriction.name}}</li>
   </ul>
 </div>
 {{/if}}
