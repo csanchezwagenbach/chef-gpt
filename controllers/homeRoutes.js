@@ -19,7 +19,7 @@ router.get("/login", async (req, res) => {
     }
 });
 
-router.get("/:user_id", async (req, res) => {
+router.get("/profile", async (req, res) => {
     try {
         res.render("profile")
         // This route will be fleshed out with information that is sent to the template once the user database is seeded and api routes are all functional
