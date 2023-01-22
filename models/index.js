@@ -20,18 +20,18 @@ Ingredient.belongsToMany(User, {
     unique: false,
   },
 });
-// Ingredient.belongsToMany(Restriction, {
-//   through: {
-//     model: Prompt,
-//     unique: false,
-//   },
-// });
-// Restriction.belongsToMany(Ingredient, {
-//   through: {
-//     model: Prompt,
-//     unique: false,
-//   },
-// });
+Ingredient.belongsToMany(Restriction, {
+  through: {
+    model: Prompt,
+    unique: false,
+  },
+});
+Restriction.belongsToMany(Ingredient, {
+  through: {
+    model: Prompt,
+    unique: false,
+  },
+});
 Restriction.belongsToMany(User, {
   through: {
     model: Prompt,
@@ -80,5 +80,19 @@ Prompt.belongsTo(Ingredient, {
 Prompt.belongsTo(Restriction, {
   foreignKey: "restriction_id"
 });
+
+// Ingredient.belongsToMany(Suggestion, {
+//   through: {
+//     model: Prompt,
+//     unique: false
+//   }
+// });
+
+// Restriction.belongsToMany(Suggestion, {
+//   through: {
+//     model: Prompt,
+//     unique: false
+//   }
+// });
 
 module.exports = { Ingredient, Prompt, Restriction, Suggestion, User };

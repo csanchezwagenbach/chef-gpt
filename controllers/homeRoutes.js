@@ -46,7 +46,15 @@ router.get("/suggestion/:id", withAuth, async (req, res) => {
         const suggestionData = await Suggestion.findByPk(req.params.id, {
             include: [
                 {
-                    model: Ingredient
+                    model: Prompt,
+                    include: [
+                        {
+                            model: Ingredient
+                        },
+                        {
+                            model: Restriction
+                        }
+                    ]
                 }
             ]
         })
