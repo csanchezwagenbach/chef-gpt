@@ -68,6 +68,13 @@ router.get("/suggestion/:id", withAuth, async (req, res) => {
 });
 
 // One more view to be created that will be request.handlebars, this will be a get request to /:user_id/newrequest
-
+router.get("/newsuggestion", withAuth, async (req, res) => {
+    try {
+        res.render("request", { logged_in: true })
+    }
+    catch {
+        res.status(500).json(err)
+    }
+})
 
 module.exports = router;
