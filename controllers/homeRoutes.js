@@ -59,8 +59,8 @@ router.get("/suggestion/:id", withAuth, async (req, res) => {
             ]
         })
         const suggestion = suggestionData.get({ plain: true });
-        console.log(suggestion)
-        res.render("suggestion", suggestion)
+
+        res.render("suggestion", { suggestion, logged_in: true })
     }
     catch (err) {
         res.status(500).json(err)
