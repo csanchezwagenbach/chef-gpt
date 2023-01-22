@@ -32,7 +32,7 @@ router.get("/profile", async (req, res) => {
         });
 
         const user = userData.get({ plain: true });
-        
+
         res.render("profile", { ...user, logged_in: true });
         // This route will be fleshed out with information that is sent to the template once the user database is seeded and api routes are all functional
     } catch (err) {
@@ -41,20 +41,28 @@ router.get("/profile", async (req, res) => {
     }
 });
 
-router.get("/suggestion/:id", async (req, res) => {
+router.get("/suggestion/:id", withAuth, async (req, res) => {
     try {
         const suggestionData = await Suggestion.findByPk(req.params.id, {
             include: [
                 {
-                model: [{ model: Ingredient, through: Prompt }, { model: Restriction, through: Prompt}]
+                    model: Prompt,
+                    include: [
+                        {
+                            model: Ingredient
+                        },
+                        {
+                            model: Restriction
+                        }
+                    ]
                 }
             ]
         })
-
         const suggestion = suggestionData.get({ plain: true });
-        res.render("suggestion", suggestion)
-        // This route will be fleshed out with information that is sent to the template once the user database and suggestions database is seeded and api routes are all functional
-    } catch (err) {
+
+        res.render("suggestion", { suggestion, logged_in: true })
+    }
+    catch (err) {
         res.status(500).json(err)
     }
 });

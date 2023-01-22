@@ -1,13 +1,9 @@
-var container = $(".container")
-
-container.on("click", async function(event) {
+$(".suggestion-card").click(function(event){
     let element = event.target;
-    let card = element.parents(".suggestion-card")
-    let suggestionId = card.getAttribute("data-number");
     console.log(element);
-    console.log(card);
-    console.log(suggestionId);
-    if (suggestionId) {
+    let parentCard = $(element).parents(".card")
+    let suggestionId = $(parentCard).attr("data-number")
+    if(suggestionId) {
         document.location.replace(`/suggestion/${suggestionId}`)
     }
 });

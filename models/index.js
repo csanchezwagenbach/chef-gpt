@@ -38,30 +38,61 @@ Restriction.belongsToMany(User, {
     unique: false,
   },
 });
+
 User.belongsToMany(Restriction, {
   through: {
     model: Prompt,
     unique: false,
   },
 });
+
 Prompt.belongsToMany(User, {
   through: {
     model: Suggestion,
     unique: false,
   },
 });
+
 User.belongsToMany(Prompt, {
   through: {
     model: Suggestion,
     unique: false,
   },
 });
+
 Suggestion.belongsTo(User, {
   foreignKey: "user_id",
 });
+
 User.hasMany(Suggestion, {
   foreignKey: "user_id",
   onDelete: "CASCADE",
 });
+
+Suggestion.belongsTo(Prompt, {
+  foreignKey: "prompt_id"
+});
+
+Prompt.belongsTo(Ingredient, {
+  foreignKey: "ingredient_id"
+});
+
+Prompt.belongsTo(Restriction, {
+  foreignKey: "restriction_id"
+});
+
+// Ingredient.belongsToMany(Suggestion, {
+//   through: {
+//     model: Prompt,
+//     unique: false
+//   }
+// });
+
+// Restriction.belongsToMany(Suggestion, {
+//   through: {
+//     model: Prompt,
+//     unique: false
+//   }
+// });
 
 module.exports = { Ingredient, Prompt, Restriction, Suggestion, User };

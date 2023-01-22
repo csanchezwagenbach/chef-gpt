@@ -1,84 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap"
-      rel="stylesheet"/>
-    <link rel="stylesheet" href="/css/main.css"/>
-    <title>YOUR PERSONAL COOK</title>
-  </head>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <title>trAilmix</title>
+</head>
+
 <body>
-   <!-- Nav Bar -->
-    <nav class="navbar navbar-light bg-primary d-flex container-fluid">      
-        <a class="navbar-brand">🍳 CHEF GPT</a>
-        <div class=" gap-3">
-        <a class="btn btn-outline-dark" href="/" role="button">HOME</a>
-        {{#if logged_in}}
-        <a class="btn btn-outline-dark" href="/profile" role="button">DASHBOARD</a>
-        <a class="btn btn-outline-dark" href="#" role="button">NEW SUGGESTIONS</a>
-        <button class="btn btn-outline-dark" id="logout" role="button">LOG OUT</a>
+  <!-- Nav Bar -->
+  <nav class="navbar navbar-light bg-primary d-flex container-fluid">
+    <a class="navbar-brand">🍳 CHEF GPT</a>
+    <div class=" gap-3">
+      <a class="btn btn-outline-dark" href="/" role="button">HOME</a>
+      {{#if logged_in}}
+      <a class="btn btn-outline-dark" href="/profile" role="button">DASHBOARD</a>
+      <a class="btn btn-outline-dark" href="#" role="button">NEW SUGGESTIONS</a>
+      <button class="btn btn-outline-dark" id="logout" role="button">LOG OUT</a>
         {{else}}
         <a class="btn btn-outline-dark" href="/login" id="login">Log in</a>
         {{/if}}
-      </form>
-    </nav>
-
-<!--Log in Logic-->
-    {{!-- <div class="flex-column justify-space-around">
-      <header class="display-flex justify-space-between align-center p-2">
-        <nav>
-          <!-- Conditionally render login or logout links -->
-          {{#if logged_in}}
-          <a href="/profile">profile</a> |
-          <button class="no-button" id="logout">logout</button>
-          {{else}}
-          <a href="/login">login</a>
-          {{/if}}
-        </nav>
-      </header> --}}
-      <main class="container container-fluid mt-5">
-          {{{body}}}
-      </main>
-      <footer>
-        
-      </footer>
-    </div>
-  
-    <!-- Render script for logged in users only -->
-    {{#if logged_in}}
-    <script src="/js/logout.js"></script>
-    {{/if}}
-  </body>
-  
+        </form>
+  </nav>
 
 
-    <!-- Link the DayJS library -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-      crossorigin="anonymous"
-    ></script>
-    <!-- JQuery JS link -->
-    <script
-      src="https://code.jquery.com/jquery-3.6.1.min.js"
-      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
-      crossorigin="anonymous"
-    ></script>
-    <!-- Bootstrap JS link -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./asset/js/script.js"></script>
-  </body>
+  <main class="container container-fluid mt-5" id="main-container">
+    {{{body}}}
+  </main>
+  <footer>
+
+  </footer>
+  </div>
+  <!-- Link the DayJS library -->
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+  <!-- JQuery JS link -->
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS link -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  <script src="./js/profile.js"></script>
+  {{/if}}
+</body>
+
+
+
+
 </html>
