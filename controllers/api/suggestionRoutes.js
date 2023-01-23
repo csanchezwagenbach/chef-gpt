@@ -5,7 +5,7 @@ router.post("/", async (req, res) => {
   try {
     const title = req.body.title;
     const content = req.body.content;
-    const user_id = req.body.user_id;
+    const user_id = req.session.user_id;
     const newSuggestion = await Suggestion.create({
       title,
       content,
