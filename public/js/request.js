@@ -17,6 +17,8 @@ const groceryStore = document.querySelector("#grocery-store");
 
 const generateConfirmationButton = document.querySelector("#send-button");
 
+const yesChef = document.querySelector("#yes-chef");
+
 let ingredients = [];
 let restrictions = [];
 let details = [];
@@ -114,9 +116,25 @@ function generateConfirmations() {
     confirmDetails();
 }
 
-
+async function sendRequest() {
+    const response = await fetch(`/suggestion/:id`, {
+        method: "POST",
+        body: JSON.stringify({ingredients, restrictions, detailsToConfirm}),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    });
+    
+    if (response.ok) {
+        document.location.replace("")
+    }
+}
 
 addIngredientButton.addEventListener("click", addIngredient);
+
 addRestrictionButton.addEventListener("click", addRestriction);
+
 generateConfirmationButton.addEventListener("click",
     generateConfirmations);
+
+yesChef.addEventListener("click", );
