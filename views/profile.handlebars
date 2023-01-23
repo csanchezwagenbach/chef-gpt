@@ -1,8 +1,8 @@
-<p>Profile</p>
+<p id="profile">Welcome Back </p>
 {{#if suggestions.length}}
 
 {{#each suggestions as |suggestion|}}
-  <div class="card suggestion-card" data-number={{suggestion.id}} style="width: 18rem;">
+  <div class="card suggestion-card border-0 shadow p-3 mb-5 bg-white rounded" data-number={{suggestion.id}} style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">{{suggestion.title}}</h5>
     </div>
