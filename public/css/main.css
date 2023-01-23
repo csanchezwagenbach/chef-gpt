@@ -3,18 +3,6 @@
     
 }
 
-.navbar-brand{
-    font-size: 30px;
-}
-.intro {
-    font-size: 70px;
-}
-
-.intro{
-    display: flex;
-    justify-content: center;
-    padding-top: 100px;
-}
 
 #welcome-text {
     font-size: 60px;
@@ -23,4 +11,8 @@
 
 .shadowed-card {
     box-shadow: 5px 5px 7px rgb(220, 220, 220);
+}
+.navbar-brand {
+    font-family: "Bree Serif"; serif;
+    font-size: 35px;
 }
