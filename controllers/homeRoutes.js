@@ -94,6 +94,15 @@ router.post("/makesuggestion", withAuth, async (req, res) => {
     }
 });
 
+router.get("/newsuggestion", withAuth, async (req, res) => {
+    try {
+        let suggestion = req.query.suggestion;
+        res.render("newsuggestion", {suggestion, logged_in: true })
+    } catch {
+        res.status(500).json(err)
+    }
+})
+
 // One more view to be created that will be request.handlebars, this will be a get request to /:user_id/newrequest
 router.get("/request", withAuth, async (req, res, next) => {
     try {
