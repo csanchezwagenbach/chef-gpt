@@ -125,8 +125,9 @@ async function sendRequest() {
         }
     });
     const text = await response.json()
-    console.log(text)
-    document.location.replace(`/newsuggestion?suggestion=${text}`)
+    console.log(text.suggestion)
+    const suggestion = text.suggestion
+    document.location.replace(`/newsuggestion?suggestion=${suggestion}`)
 }
 
 addIngredientButton.addEventListener("click", addIngredient);
