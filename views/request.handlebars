@@ -1,36 +1,111 @@
 <div class="row">
     <div class="col-12 col-md-4 col-lg-4">
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
-                aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+            <input type="text" class="form-control" placeholder="Add an ingredient" aria-label="ingredient"
+                aria-describedby="button-addon2" id="ingredient-input">
+            <button class="btn btn-outline-secondary" type="button" id="add-ingredient">Add</button>
         </div>
+
+        <p>
+            If you have a time constraint, let Chef know by checking the box below and entering how many minutes you'll
+            be cooking.
+        </p>
 
         <div class="input-group mb-3">
             <div class="input-group-text">
                 <input class="form-check-input mt-0" type="checkbox" value=""
-                    aria-label="Checkbox for following text input">
+                    aria-label="Checkbox for following text input" id="time-constraint">
             </div>
-            <input type="text" class="form-control" aria-label="Text input with checkbox">
+            <input type="text" class="form-control" aria-label="Text input with checkbox" value="" id="minutes">
         </div>
 
-        <div class="input-group mb-3">
-            <div class="input-group-text">
-                <input class="form-check-input mt-0" type="checkbox" value=""
-                    aria-label="Checkbox for following text input">
-            </div>
-            <input type="text" class="form-control" aria-label="Text input with checkbox">
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="grocery-store">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Check the box if you'll have time to stop by a
+                grocery store.</label>
         </div>
+
+        <p>Please select your dietary restrictions from the list below.</p>
 
         <div class="input-group">
-            <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                <option selected>Choose...</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+            <select class="form-select" id="restriction-input" aria-label="restriction-options">
+                <option value="none">Choose...</option>
+                <option value="Nut Allergy" data-number="1">Nut Allergy</option>
+                <option value="Low Sodium" data-number="2">Low Sodium</option>
+                <option value="Vegetarian" data-number="3">Vegetarian</option>
+                <option value="Vegan" data-number="4">Vegan</option>
+                <option value="Lactose Intolerance" data-number="5">Lactose Intolerance</option>
+                <option value="Gluten-Free" data-number="6">Gluten-Free</option>
+                <option value="Kosher" data-number="7">Kosher</option>
+                <option value="Halal" data-number="8">Halal</option>
+                <option value="Keto" data-number="9">Keto</option>
+                <option value="Paleo" data-number="10">Paleo</option>
             </select>
-            <button class="btn btn-outline-secondary" type="button">Button</button>
+            <button class="btn btn-outline-secondary" type="button" id="add-restriction">Add</button>
         </div>
-        
+
+    </div>
+
+    <div class="col-12 col-md-4 col-lg-4">
+        <h4>Your Ingredients</h4>
+        <ol id="ingredient-list">
+
+        </ol>
+
+    </div>
+    <div class="col-12 col-md-4 col-lg-4">
+        <h4>Meal Restrictions</h4>
+        <ol id="restriction-list">
+
+        </ol>
+
+    </div>
+
+
+</div>
+
+<div class="row justify-content-end">
+    <div class="col-12 col-md-4 col-lg-4">
+        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#confirmModal"
+            id="send-button">Send in your request</button>
+    </div>
+</div>
+
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Did I get all this down correctly?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-4">
+                            <h6>Ingredients</h6>
+                            <ol id="confirm-ingredient-list">
+
+                            </ol>
+                        </div>
+
+                        <div class="col-4">
+                            <h6>Restrictions</h6>
+                            <ol id="confirm-restriction-list">
+
+                            </ol>
+                        </div>
+
+                        <div class="col-4" id="confirm-details">
+                            <h6>Additional Details</h6>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Not quite</button>
+                <button type="button" class="btn btn-primary">Yes, Chef!</button>
+            </div>
+        </div>
     </div>
 </div>
