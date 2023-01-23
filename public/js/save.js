@@ -21,7 +21,11 @@ async function saveSuggestion() {
     },
   });
   const resolved = await response.json();
-  console.log(resolved);
+  console.log(resolved.id);
+  let suggestionId = resolved.id
+  if(suggestionId) {
+    document.location.replace(`/suggestion/${suggestionId}`)
+  }
 }
 
 saveButton.addEventListener("click", saveSuggestion);
