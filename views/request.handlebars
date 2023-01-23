@@ -14,13 +14,13 @@
         <div class="input-group mb-3">
             <div class="input-group-text">
                 <input class="form-check-input mt-0" type="checkbox" value=""
-                    aria-label="Checkbox for following text input">
+                    aria-label="Checkbox for following text input" id="time-constraint">
             </div>
-            <input type="text" class="form-control" aria-label="Text input with checkbox" value="">
+            <input type="text" class="form-control" aria-label="Text input with checkbox" value="" id="minutes">
         </div>
 
         <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <input class="form-check-input" type="checkbox" role="switch" id="grocery-store">
             <label class="form-check-label" for="flexSwitchCheckDefault">Check the box if you'll have time to stop by a
                 grocery store.</label>
         </div>
@@ -71,7 +71,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true" >
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -103,7 +103,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Not Quite</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Not quite</button>
                 <button type="button" class="btn btn-primary">Yes, Chef!</button>
             </div>
         </div>
