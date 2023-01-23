@@ -124,10 +124,9 @@ async function sendRequest() {
             "Content-Type": "application/json"
         }
     });
-    
-    if (response.ok) {
-        console.log(response)
-    }
+    const text = await response.json()
+    console.log(text)
+    document.location.replace(`/newsuggestion?suggestion=${text}`)
 }
 
 addIngredientButton.addEventListener("click", addIngredient);

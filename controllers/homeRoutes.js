@@ -85,9 +85,9 @@ router.post("/makesuggestion", withAuth, async (req, res) => {
             temperature: 0.7
             }
         );
-        // const suggestion = suggestionData.choices[0].text;
         console.log(suggestionData.data.choices[0].text);
-        res.render("homepage", { logged_in: true })
+        const suggestion = suggestionData.data.choices[0].text
+        res.status(200).json({suggestion})
     } catch (err){
         console.log(err)
         res.status(500).json(err)
@@ -95,9 +95,9 @@ router.post("/makesuggestion", withAuth, async (req, res) => {
 });
 
 // One more view to be created that will be request.handlebars, this will be a get request to /:user_id/newrequest
-router.get("/newsuggestion", withAuth, async (req, res) => {
+router.get("/request", withAuth, async (req, res, next) => {
     try {
-        res.render("request", { logged_in: true })
+        res.render("request", {logged_in: true })
     }
     catch {
         res.status(500).json(err)
