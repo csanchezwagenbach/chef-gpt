@@ -4,13 +4,7 @@
 {{#each suggestions as |suggestion|}}
   <div class="card suggestion-card" data-number={{suggestion.id}} style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title">{{suggestion.name}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">{{suggestion.minutes}}</h6>
-      {{!-- <h6 class="card-subtitle mb-2 text-muted">{{ingredients}}</h6> --}}
-      <p class="card-text">Some quick example text to build on the card title
-        and make up the bulk of the card's content.</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
+      <h5 class="card-title">{{suggestion.title}}</h5>
     </div>
   </div>
 {{/each}}

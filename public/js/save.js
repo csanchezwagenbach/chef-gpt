@@ -3,13 +3,16 @@ let saveButton = document.querySelector("#save-button");
 let titleInput = document.querySelector("#new-suggestion-title");
 let contentInput = document.querySelector("#new-suggestion-content");
 
-let name = titleInput.value;
-let title = contentInput.value;
+
 
 async function saveSuggestion() {
+  let title = titleInput.value;
+  let content = contentInput.placeholder;
   if (!title) {
     return;
   }
+  console.log(title)
+  console.log(content)
   const response = await fetch(`/api/suggestions`, {
     method: "POST",
     body: JSON.stringify({ title, content }),
@@ -18,7 +21,11 @@ async function saveSuggestion() {
     },
   });
   const resolved = await response.json();
-  console.log(resolved);
+  console.log(resolved.id);
+  let suggestionId = resolved.id
+  if(suggestionId) {
+    document.location.replace(`/suggestion/${suggestionId}`)
+  }
 }
 
-saveButton.addEventListener("click", saveSuggestion());
+saveButton.addEventListener("click", saveSuggestion);

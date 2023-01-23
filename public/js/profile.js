@@ -3,6 +3,7 @@ $(".suggestion-card").click(function(event){
     console.log(element);
     let parentCard = $(element).parents(".card")
     let suggestionId = $(parentCard).attr("data-number")
+    
     if(suggestionId) {
         document.location.replace(`/suggestion/${suggestionId}`)
     }
