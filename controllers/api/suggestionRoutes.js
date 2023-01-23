@@ -6,12 +6,15 @@ router.post("/", async (req, res) => {
     const title = req.body.title;
     const content = req.body.content;
     const user_id = req.session.user_id;
+    console.log(title);
+    console.log(content);
+    console.log(user_id);
     const newSuggestion = await Suggestion.create({
       title,
       content,
       user_id,
     });
-
+    console.log(newSuggestion)
     res.status(200).json(newSuggestion);
   } catch (err) {
     console.log(err);
