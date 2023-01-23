@@ -4,7 +4,7 @@ const router = require("express").Router();
 router.post("/", async (req, res) => {
   try {
     const title = req.body.title;
-    const content = req.body.content;
+    const content = encodeURI(req.body.content);
     const user_id = req.session.user_id;
     console.log(title);
     console.log(content);
@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
       content,
       user_id,
     });
-    console.log(newSuggestion)
+    console.log(newSuggestion);
     res.status(200).json(newSuggestion);
   } catch (err) {
     console.log(err);
