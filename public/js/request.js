@@ -6,6 +6,8 @@ let restrictionInput = document.querySelector("#restriction-input");
 let addRestrictionButton = document.querySelector("#add-restriction");
 let restrictionsList = document.querySelector("#restriction-list");
 
+let sendButton = document.querySelector("#send-button");
+
 let ingredients = [];
 let restrictions = [];
 
@@ -59,6 +61,8 @@ function deleteRestriction (restriction) {
     }
     restriction.parentElement.remove();
 }
+
+
 
 addIngredientButton.addEventListener("click", addIngredient);
 addRestrictionButton.addEventListener("click", addRestriction);

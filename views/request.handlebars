@@ -6,8 +6,9 @@
             <button class="btn btn-outline-secondary" type="button" id="add-ingredient">Add</button>
         </div>
 
-        <p> 
-            If you have a time constraint, let Chef know by checking the box below and entering how many minutes you'll be cooking.
+        <p>
+            If you have a time constraint, let Chef know by checking the box below and entering how many minutes you'll
+            be cooking.
         </p>
 
         <div class="input-group mb-3">
@@ -61,4 +62,50 @@
     </div>
 
 
+</div>
+
+<div class="row justify-content-end">
+    <div class="col-12 col-md-4 col-lg-4">
+        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#confirmModal"
+            id="send-button">Send in your request</button>
+    </div>
+</div>
+
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Did I get all this down correctly?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-4">
+                            <h6>Ingredients</h6>
+                            <ol id="confirm-ingredient-list">
+
+                            </ol>
+                        </div>
+
+                        <div class="col-4">
+                            <h6>Restrictions</h6>
+                            <ol id="confirm-restriction-list">
+
+                            </ol>
+                        </div>
+
+                        <div class="col-4" id="confirm-details">
+                            <h6>Additional Details</h6>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Not Quite</button>
+                <button type="button" class="btn btn-primary">Yes, Chef!</button>
+            </div>
+        </div>
+    </div>
 </div>
