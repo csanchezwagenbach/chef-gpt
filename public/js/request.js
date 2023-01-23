@@ -117,7 +117,7 @@ function generateConfirmations() {
 }
 
 async function sendRequest() {
-    const response = await fetch(`/suggestion/:id`, {
+    const response = await fetch(`/makesuggestion`, {
         method: "POST",
         body: JSON.stringify({ingredients, restrictions, detailsToConfirm}),
         headers: {
@@ -126,7 +126,7 @@ async function sendRequest() {
     });
     
     if (response.ok) {
-        document.location.replace("")
+        console.log(response)
     }
 }
 
@@ -137,4 +137,4 @@ addRestrictionButton.addEventListener("click", addRestriction);
 generateConfirmationButton.addEventListener("click",
     generateConfirmations);
 
-yesChef.addEventListener("click", );
+yesChef.addEventListener("click", sendRequest);

@@ -1,6 +1,9 @@
 const router = require("express").Router();
 const { User, Prompt, Suggestion, Restriction, Ingredient } = require("../models");
 const withAuth = require("../utils/auth");
+const openAi = require("../config/ai");
+
+let prompt = "You are a professional chef and your task is to assist an amateur cook prepare a meal for themselves at home. You will be given a series of inputs: A list of ingredients a user has or would like to use, a time constraint (if there is any), dietary restrictions (if there are any), and whether or not the use is able to stop by a grocery store (and thus get more ingredients). You must provide a detailed, easy-to-understand recipe and set of instructions for the user, and the tone of the instructions should be encouraging and exciting. Please list out all the required ingredients and hardware at the beginning of your explanation, as though it were a recipe. Please ignore unneccessary input that is not directly tied to a user's desired output. Here is the user's input."
 
 
 router.get("/", withAuth, async (req, res) => {
@@ -66,6 +69,25 @@ router.get("/suggestion/:id", withAuth, async (req, res) => {
         res.status(500).json(err)
     }
 });
+
+// router.post("/makesuggestion", withAuth, async (req, res) => {
+//     try {
+//         prompt += req.body
+//         let suggestionData = await openAi.createCompletion(
+//             {
+//             model: "text-davinci-003",
+//             prompt: prompt,
+//             max_tokens: 1000,
+//             temperature: 0.7
+//             }
+//         );
+//         const suggestion = suggestionData.choices[0].text;
+//         console.log(suggestion);
+//     } catch (err){
+//         console.log(err)
+//         res.status(500).json(err)
+//     }
+// });
 
 // One more view to be created that will be request.handlebars, this will be a get request to /:user_id/newrequest
 router.get("/newsuggestion", withAuth, async (req, res) => {
