@@ -1,15 +1,22 @@
-.navbar {
+.navbar,
+#add-ingredient, 
+#add-restriction {
     background-color: rgb(68, 131, 108);
-    
+
 }
 
+#add-ingredient,
+#add-restriction {
+    color: black
+}
 
 #welcome-text {
     font-size: 60px;
     font-family: "Bree Serif", serif;
 }
 
-.shadowed-card {
+.shadowed-card,
+{
     box-shadow: 5px 5px 7px rgb(220, 220, 220);
 }
 .navbar-brand {
