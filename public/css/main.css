@@ -23,3 +23,20 @@
     font-family: "Bree Serif"; serif;
     font-size: 35px;
 }
+h5, 
+h2,
+label,
+#profile {
+    font-family: "Bree Serif", serif;
+}
+.btn-match {
+    background-color:rgb(68, 131, 108); 
+    border: none;
+    font-size: 18px;
+}
+.btn-match:hover {
+background-color: rgb(99, 192, 158);;
+}
+#profile{
+    font-size: 40px;
+}
