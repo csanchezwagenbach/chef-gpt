@@ -6,8 +6,9 @@
             <button class="btn btn-outline-secondary" type="button" id="add-ingredient">Add</button>
         </div>
 
-        <p>If you have a time constraint, let Chef know by checking the box below and entering how many minutes you'll
-            be cooking.</p>
+        <p> 
+            If you have a time constraint, let Chef know by checking the box below and entering how many minutes you'll be cooking.
+        </p>
 
         <div class="input-group mb-3">
             <div class="input-group-text">
@@ -26,20 +27,20 @@
         <p>Please select your dietary restrictions from the list below.</p>
 
         <div class="input-group">
-            <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+            <select class="form-select" id="restriction-input" aria-label="restriction-options">
                 <option value="none">Choose...</option>
-                <option value="1">Nut Allergy</option>
-                <option value="2">Low Sodium</option>
-                <option value="3">Vegetarian</option>
-                <option value="4">Vegan</option>
-                <option value="5">Lactose Intolerance</option>
-                <option value="6">Gluten-Free</option>
-                <option value="7">Kosher</option>
-                <option value="8">Halal</option>
-                <option value="9">Keto</option>
-                <option value="10">Paleo</option>
+                <option value="Nut Allergy" data-number="1">Nut Allergy</option>
+                <option value="Low Sodium" data-number="2">Low Sodium</option>
+                <option value="Vegetarian" data-number="3">Vegetarian</option>
+                <option value="Vegan" data-number="4">Vegan</option>
+                <option value="Lactose Intolerance" data-number="5">Lactose Intolerance</option>
+                <option value="Gluten-Free" data-number="6">Gluten-Free</option>
+                <option value="Kosher" data-number="7">Kosher</option>
+                <option value="Halal" data-number="8">Halal</option>
+                <option value="Keto" data-number="9">Keto</option>
+                <option value="Paleo" data-number="10">Paleo</option>
             </select>
-            <button class="btn btn-outline-secondary" type="button">Add</button>
+            <button class="btn btn-outline-secondary" type="button" id="add-restriction">Add</button>
         </div>
 
     </div>
@@ -52,7 +53,7 @@
 
     </div>
     <div class="col-12 col-md-4 col-lg-4">
-
+        <h4>Meal Restrictions</h4>
         <ol id="restriction-list">
 
         </ol>
