@@ -1,11 +1,15 @@
-<p id="profile">Welcome Back </p>
-{{#if suggestions.length}}
+<div class="row justify-content-space-between">
+    <p id="profile" class="col-12 col-md-12 col-lg-12 text-center">Welcome Back </p>
+    {{#if suggestions.length}}
 
-{{#each suggestions as |suggestion|}}
-  <div class="card suggestion-card border-0 shadow p-3 mb-5 bg-white rounded" data-number={{suggestion.id}} style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title text-capitalize">{{suggestion.title}}</h5>
+    {{#each suggestions as |suggestion|}}
+    <div class="card suggestion-card border-0 shadow p-3 mb-5 bg-white rounded col-12 col-md-12 col-lg-12" data-number={{suggestion.id}}
+      {{!-- style="width: 18rem;"> --}}
+      <div class="card-body">
+        <h5 class="card-title text-capitalize text-center">{{suggestion.title}}</h5>
+      </div>
     </div>
+    {{/each}}
+    {{/if}}
   </div>
-{{/each}}
-{{/if}}
+</div>
