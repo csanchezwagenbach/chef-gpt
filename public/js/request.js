@@ -47,7 +47,7 @@ function addIngredient() {
     listItem.innerHTML +=
       '<span onclick="deleteIngredient(this)" style="float:right;cursor:pointer;">X</span>';
   });
-  ingredientInput.value = ""
+  ingredientInput.value = "";
 }
 
 function deleteIngredient(ingredient) {
@@ -129,7 +129,7 @@ function generateConfirmations() {
 }
 
 function displayLoading() {
-  wholeForm.innerHTML = `<div class = "row align-items-center justify-content-center"> <img id="loading" src="images/chef.jpg" alt="Chef-GPT" class="col-12 display"> </div>`
+  wholeForm.innerHTML = `<div class = "row align-items-center justify-content-center w-100 bg-white"> <img id="loading" src="images/chef.jpg" alt="Chef-GPT" class="col-12 display"> </div>`;
   bod.style.removeProperty("background-image");
   bod.style.removeProperty("background-repeat");
   bod.style.removeProperty("background-attachment");
@@ -149,7 +149,7 @@ async function sendRequest() {
       "Content-Type": "application/json",
     },
   });
-  
+
   const text = await response.json();
   console.log(text.suggestion);
   const suggestion = encodeURI(text.suggestion).toString();
