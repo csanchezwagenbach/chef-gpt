@@ -135,11 +135,5 @@ body {
   background-image: url("https://images.pexels.com/photos/4033003/pexels-photo-4033003.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 100%;
-}
-
-#logo {
-  height: 10%;
-  width: 10%;
-  left: 0%;
+  background-size: cover;
 }
