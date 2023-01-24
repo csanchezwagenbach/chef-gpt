@@ -1,6 +1,16 @@
+<<<<<<< HEAD
+{{#if users}}
+{{#each users as |user|}}
+<p id="profile">Welcome Back, {{user.name}}</p> 
+{{/each}}
+{{/if}}
+
+{{#if suggestions.length}}
+=======
 <div class="row justify-content-space-between">
     <p id="profile" class="col-12 col-md-12 col-lg-12 text-center">Welcome Back </p>
     {{#if suggestions.length}}
+>>>>>>> main
 
     {{#each suggestions as |suggestion|}}
     <div class="card suggestion-card border-0 shadow p-3 mb-5 bg-white rounded col-12 col-md-12 col-lg-12" data-number={{suggestion.id}}
