@@ -36,8 +36,8 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        console.log(req.session.user_id)
-        // document.location.replace('/profile');
+        // console.log(req.session.user_id)
+        document.location.replace('/profile');
       } else {
         alert(response.statusText);
       }
