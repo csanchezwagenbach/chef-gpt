@@ -10,4 +10,17 @@
 {{/each}}
 {{/if}}
 
+    {{#each suggestions as |suggestion|}}
+      <div
+        class="card suggestion-card"
+        data-number={{suggestion.id}}
+        style="width: 18rem;"
+      >
+        <div class="card-body">
+          <h5 class="card-title">{{suggestion.title}}</h5>
+        </div>
+      </div>
+    {{/each}}
+  {{/if}}
 
+</body>
