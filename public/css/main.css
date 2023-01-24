@@ -422,3 +422,7 @@ body {
 #send-button:hover:before{
   width: 130%;
 }
+#logo {
+  height: 10%;
+  width: 10%;
+}
