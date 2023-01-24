@@ -1,146 +1,144 @@
 .navbar,
 #add-ingredient,
 #add-restriction {
-    background-color: rgb(68, 131, 108);
-
+  background-color: rgb(68, 131, 108);
 }
 
 #add-ingredient,
 #add-restriction {
-    color: black
+  color: black;
 }
 
 #welcome-text {
-    font-size: 60px;
-    font-family: "Bree Serif", serif;
+  font-size: 60px;
+  font-family: "Bree Serif", serif;
 }
 
 .shadowed-card {
-    box-shadow: 5px 5px 7px rgb(220, 220, 220);
+  box-shadow: 5px 5px 7px rgb(220, 220, 220);
 }
 
 .navbar-brand {
-    font-family: "Bree Serif"
-        serif;
-    font-size: 35px;
+  font-family: "Bree Serif" serif;
+  font-size: 35px;
 }
 
 h5,
 h2,
 label,
-.sugg-card, 
+.sugg-card,
 #profile {
-    font-family: "Bree Serif", serif;
+  font-family: "Bree Serif", serif;
 }
 
 .btn-match {
-    background-color: rgb(68, 131, 108);
-    border: none;
-    font-size: 18px;
+  background-color: rgb(68, 131, 108);
+  border: none;
+  font-size: 18px;
 }
 
 .btn-match:hover {
-    background-color: rgb(99, 192, 158);
-    ;
+  background-color: rgb(99, 192, 158);
 }
 #profile,
-.sugg-card{
-    font-size: 40px;
+.sugg-card {
+  font-size: 40px;
 }
 
 #loading {
-    visibility: hidden;
-    height: 50%;
-    width: 50%;
-    animation: bounce 2s infinite;
-    -webkit-animation: bounce 2s infinite;
-    -moz-animation: bounce 2s infinite;
-    -o-animation: bounce 2s infinite;
+  visibility: hidden;
+  height: 50%;
+  width: 50%;
+  animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  -moz-animation: bounce 2s infinite;
+  -o-animation: bounce 2s infinite;
 }
 
 #loading.display {
-    visibility: visible;
+  visibility: visible;
 }
 
 @-webkit-keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -webkit-transform: translateY(0);
+  }
 
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        -webkit-transform: translateY(0);
-    }
+  40% {
+    -webkit-transform: translateY(-30px);
+  }
 
-    40% {
-        -webkit-transform: translateY(-30px);
-    }
-
-    60% {
-        -webkit-transform: translateY(-15px);
-    }
+  60% {
+    -webkit-transform: translateY(-15px);
+  }
 }
 
 @-moz-keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -moz-transform: translateY(0);
+  }
 
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        -moz-transform: translateY(0);
-    }
+  40% {
+    -moz-transform: translateY(-30px);
+  }
 
-    40% {
-        -moz-transform: translateY(-30px);
-    }
-
-    60% {
-        -moz-transform: translateY(-15px);
-    }
+  60% {
+    -moz-transform: translateY(-15px);
+  }
 }
 
 @-o-keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -o-transform: translateY(0);
+  }
 
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        -o-transform: translateY(0);
-    }
+  40% {
+    -o-transform: translateY(-30px);
+  }
 
-    40% {
-        -o-transform: translateY(-30px);
-    }
-
-    60% {
-        -o-transform: translateY(-15px);
-    }
+  60% {
+    -o-transform: translateY(-15px);
+  }
 }
 
 @keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
 
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        transform: translateY(0);
-    }
+  40% {
+    transform: translateY(-30px);
+  }
 
-    40% {
-        transform: translateY(-30px);
-    }
-
-    60% {
-        transform: translateY(-15px);
-    }
+  60% {
+    transform: translateY(-15px);
+  }
 }
 
 body {
-  background-image: url('https://images.pexels.com/photos/4033003/pexels-photo-4033003.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+  background-image: url("https://images.pexels.com/photos/4033003/pexels-photo-4033003.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100%;
+}
+
+#logo {
+  height: 5%;
+  width: 5%;
 }

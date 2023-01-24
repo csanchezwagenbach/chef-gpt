@@ -1,4 +1,9 @@
-<p id="profile">Welcome Back </p>
+{{#if users}}
+{{#each users as |user|}}
+<p id="profile">Welcome Back, {{user.name}}</p> 
+{{/each}}
+{{/if}}
+
 {{#if suggestions.length}}
 
 {{#each suggestions as |suggestion|}}
