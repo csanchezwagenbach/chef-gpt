@@ -24,6 +24,7 @@ const generateConfirmationButton = document.querySelector("#send-button");
 const yesChef = document.querySelector("#yes-chef");
 
 const loader = document.querySelector("#loading");
+const wholeForm = document.querySelector("#whole-form");
 
 let ingredients = [];
 let restrictions = [];
@@ -125,14 +126,12 @@ function generateConfirmations() {
 }
 
 function displayLoading() {
-  loader.classList.add("display");
+  wholeForm.innerHTML = `<div class = "row align-items-center justify-content-center"> <img id="loading" src="images/chef.jpg" alt="Chef-GPT" class="col-12 display"> </div>`
 }
 
-function hideLoading() {
-  loader.classList.remove("display");
-}
 
 async function sendRequest() {
+  displayLoading();
   const response = await fetch(`/makesuggestion`, {
     method: "POST",
     body: JSON.stringify({ ingredients, restrictions, detailsToConfirm }),
@@ -140,11 +139,10 @@ async function sendRequest() {
       "Content-Type": "application/json",
     },
   });
-  displayLoading();
+  
   const text = await response.json();
   console.log(text.suggestion);
   const suggestion = encodeURI(text.suggestion).toString();
-  hideLoading();
   document.location.replace(`/newsuggestion?suggestion=${suggestion}`);
 }
 
