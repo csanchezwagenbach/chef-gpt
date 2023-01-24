@@ -137,3 +137,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
+#logo {
+  height: 10%;
+  width: 10%;
+}
