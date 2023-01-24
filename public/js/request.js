@@ -23,6 +23,8 @@ const generateConfirmationButton = document.querySelector("#send-button");
 
 const yesChef = document.querySelector("#yes-chef");
 
+const loader = document.querySelector("#loading");
+
 let ingredients = [];
 let restrictions = [];
 let details = [];
@@ -122,6 +124,14 @@ function generateConfirmations() {
   confirmDetails();
 }
 
+function displayLoading() {
+  loader.classList.add("display");
+}
+
+function hideLoading() {
+  loader.classList.remove("display");
+}
+
 async function sendRequest() {
   const response = await fetch(`/makesuggestion`, {
     method: "POST",
@@ -130,9 +140,11 @@ async function sendRequest() {
       "Content-Type": "application/json",
     },
   });
+  displayLoading();
   const text = await response.json();
   console.log(text.suggestion);
   const suggestion = encodeURI(text.suggestion).toString();
+  hideLoading();
   document.location.replace(`/newsuggestion?suggestion=${suggestion}`);
 }
 
