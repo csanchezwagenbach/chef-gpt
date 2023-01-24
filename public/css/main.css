@@ -28,6 +28,7 @@
 h5,
 h2,
 label,
+.sugg-card, 
 #profile {
     font-family: "Bree Serif", serif;
 }
@@ -42,8 +43,8 @@ label,
     background-color: rgb(99, 192, 158);
     ;
 }
-
-#profile {
+#profile,
+.sugg-card{
     font-size: 40px;
 }
 
