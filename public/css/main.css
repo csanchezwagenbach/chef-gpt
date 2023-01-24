@@ -9,7 +9,10 @@
 #add-restriction {
     color: black
 }
-
+#nav-title {
+    font-family: "Bree Serif", serif;
+    font-size: 37px;
+}
 #welcome-text {
     font-size: 60px;
     font-family: "Bree Serif", serif;
@@ -37,12 +40,22 @@ label,
     background-color: rgb(68, 131, 108);
     border: none;
     font-size: 18px;
+    border-radius: 4px;
 }
 
 .btn-match:hover {
     background-color: rgb(99, 192, 158);
-    ;
 }
+.btn-add{
+      background-color: rgb(68, 131, 108);
+    border: none;
+    font-size: 18px;
+    border-radius: 4px;
+}
+.btn-add:hover {
+    background-color: rgb(99, 192, 158);
+}
+
 #profile,
 .sugg-card{
     font-size: 40px;
