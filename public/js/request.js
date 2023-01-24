@@ -22,9 +22,11 @@ const groceryStore = document.querySelector("#grocery-store");
 const generateConfirmationButton = document.querySelector("#send-button");
 
 const yesChef = document.querySelector("#yes-chef");
+const notQuite = document.querySelector("#not-quite");
 
 const loader = document.querySelector("#loading");
 const wholeForm = document.querySelector("#whole-form");
+const bod = document.querySelector("#bod");
 
 let ingredients = [];
 let restrictions = [];
@@ -45,6 +47,7 @@ function addIngredient() {
     listItem.innerHTML +=
       '<span onclick="deleteIngredient(this)" style="float:right;cursor:pointer;">X</span>';
   });
+  ingredientInput.value = ""
 }
 
 function deleteIngredient(ingredient) {
@@ -127,8 +130,15 @@ function generateConfirmations() {
 
 function displayLoading() {
   wholeForm.innerHTML = `<div class = "row align-items-center justify-content-center"> <img id="loading" src="images/chef.jpg" alt="Chef-GPT" class="col-12 display"> </div>`
+  bod.style.removeProperty("background-image");
+  bod.style.removeProperty("background-repeat");
+  bod.style.removeProperty("background-attachment");
+  bod.style.removeProperty("background-size");
 }
 
+function reload() {
+  document.location.reload();
+}
 
 async function sendRequest() {
   displayLoading();
@@ -153,3 +163,5 @@ addRestrictionButton.addEventListener("click", addRestriction);
 generateConfirmationButton.addEventListener("click", generateConfirmations);
 
 yesChef.addEventListener("click", sendRequest);
+
+notQuite.addEventListener("click", reload);
