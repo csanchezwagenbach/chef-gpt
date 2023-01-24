@@ -87,20 +87,20 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body list-group-item list-group-item-success">
+          <ul class="list-group">
           <div class="container-fluid">
             <div class="row">
               <div class="col-4">
                 <h6>Ingredients</h6>
-                <ol id="confirm-ingredient-list">
-
-                </ol>
+                <li class="list-group list-group-flush" id="confirm-ingredient-list">
+                </li>
               </div>
 
               <div class="col-4">
                 <h6>Restrictions</h6>
-                <ol id="confirm-restriction-list">
+                <li id="confirm-restriction-list">
 
-                </ol>
+                </li>
               </div>
 
               <div class="col-4" id="confirm-details">
@@ -109,7 +109,7 @@
               </div>
             </div>
           </div>
-        </div> 
+        </div></ul>
         <div class="modal-footer justify-content-center text-center">
           <button type="button" class="btn btn-secondary" id="not-quite" data-bs-dismiss="modal">Not quite</button>
           <button type="button" class="btn btn-primary" id="yes-chef">Yes, Chef! 🧑‍🍳</button>
