@@ -3,6 +3,8 @@ require('dotenv').config();
 
 let sequelize;
 
+// Establishing Sequelize connection with MySQL database and exporting sequelize functionality to the rest of the application.
+
 if (process.env.JAWSDB_URL) {
     sequelize = new Sequelize(process.env.JAWSDB_URL);
   } else {

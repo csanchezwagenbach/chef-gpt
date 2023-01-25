@@ -3,7 +3,7 @@ let saveButton = document.querySelector("#save-button");
 let titleInput = document.querySelector("#new-suggestion-title");
 let contentInput = document.querySelector("#new-suggestion-content");
 
-
+// Functionality around save button found on newsuggestion.handlebars template
 
 async function saveSuggestion() {
   let title = titleInput.value;

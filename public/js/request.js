@@ -34,6 +34,8 @@ let restrictions = [];
 let details = [];
 let detailsToConfirm = "";
 
+// The JS above grabs references to all buttons and form inputs. All functions below represent functionality around capturing form input, formatting input and presenting it for confirmation, and sending all that data off as a POST request to controllers/homeRoutes
+
 function addIngredient() {
   let ingredient = ingredientInput.value;
   if (!ingredient) {
@@ -113,7 +115,6 @@ function gatherDetails() {
     details.push("I'll be going by the grocery store.");
   }
   detailsToConfirm = details.join(" ");
-  console.log(detailsToConfirm);
 }
 
 function confirmDetails() {
@@ -129,6 +130,8 @@ function generateConfirmations() {
   confirmDetails();
 }
 
+// Functionality around dropping primary display and displaying bouncing chef loader
+
 function displayLoading() {
   wholeForm.innerHTML = `<div class = "row align-items-center justify-content-center w-100 bg-white"> <img id="loading" src="images/chef.jpg" alt="Chef-GPT" class="col-12 display"> </div>`;
   bod.style.background="none";
@@ -140,9 +143,9 @@ function reload() {
   document.location.reload();
 }
 
+// Functioning sending off call to back end (where API is accessed) and redirecting user to the page holding their freshly generated suggestion. New suggestions are encoded within the URL where the user is sent upon receiving a successful response from the API.
+
 async function sendRequest() {
-  restrictions = [];
-  ingredients = [];
   displayLoading();
   const response = await fetch(`/makesuggestion`, {
     method: "POST",
@@ -151,9 +154,9 @@ async function sendRequest() {
       "Content-Type": "application/json",
     },
   });
-
+  restrictions = [];
+  ingredients = [];
   const text = await response.json();
-  console.log(text.suggestion);
   const suggestion = encodeURI(text.suggestion).toString();
   document.location.replace(`/newsuggestion?suggestion=${suggestion}`);
 }

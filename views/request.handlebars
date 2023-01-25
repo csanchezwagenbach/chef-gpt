@@ -1,3 +1,4 @@
+{{!-- The entirety of this page represents a questionnaire and confirmation of its received input. The contents of this form are grabbed in public/js/request.js and sent to the back end where the OpenAI API returns a completion based on the hard-coded prompt and received input. --}}
 <div id="whole-form">
   <div class="row">
     <div class="col-12 col-md-4 col-lg-4 shadow p-3 bg-white mb-2">
@@ -83,6 +84,8 @@
         id="send-button">Send In Your Order</button>
     </div>
   </div>
+
+  {{!-- Confirmation model generated upon a user clicking the "Send" button above --}}
 
   <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
     <div class="modal-dialog">

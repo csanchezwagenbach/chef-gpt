@@ -9,7 +9,9 @@ router.get("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
-//Post Route working
+
+// POST route for the addition of a new user. This route is hit when the user clicks on the "Sign up" button on the login.handlebars template (public/js/login.js)
+
 router.post("/", async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -24,6 +26,8 @@ router.post("/", async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+// POST route receiving an attempt at a log in on the part of a user and checking that attempt against the database. 
 
 router.post("/login", async (req, res) => {
   try {
@@ -55,6 +59,8 @@ router.post("/login", async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+// POST route logging out a user. This route is hit when the user clicks the log out button located on the main.handlebars template (public/js/logout.js)
 
 router.post("/logout", (req, res) => {
   if (req.session.logged_in) {

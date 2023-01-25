@@ -1,12 +1,11 @@
-//models
 const Ingredient = require("./Ingredient");
 const Suggestion = require("./Suggestion");
 const Prompt = require("./Prompt");
 const Restriction = require("./Restriction");
 const User = require("./User");
 
+// Many of the models described ultimately represent routes for possible future developments. Possibilities include linking saved ingredients to a user's profile, saved dietary restrictions, etc. For the purposes of a minimally viable product, tables utilized in deoployed application include "User" and "Suggestion"
 
-//belongsToMany's
 User.belongsToMany(Ingredient, {
   through: {
     model: Prompt,
@@ -81,18 +80,6 @@ Prompt.belongsTo(Restriction, {
   foreignKey: "restriction_id"
 });
 
-// Ingredient.belongsToMany(Suggestion, {
-//   through: {
-//     model: Prompt,
-//     unique: false
-//   }
-// });
 
-// Restriction.belongsToMany(Suggestion, {
-//   through: {
-//     model: Prompt,
-//     unique: false
-//   }
-// });
 
 module.exports = { Ingredient, Prompt, Restriction, Suggestion, User };
