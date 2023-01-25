@@ -146,8 +146,6 @@ function reload() {
 // Functioning sending off call to back end (where API is accessed) and redirecting user to the page holding their freshly generated suggestion. New suggestions are encoded within the URL where the user is sent upon receiving a successful response from the API.
 
 async function sendRequest() {
-  restrictions = [];
-  ingredients = [];
   displayLoading();
   const response = await fetch(`/makesuggestion`, {
     method: "POST",
@@ -156,7 +154,8 @@ async function sendRequest() {
       "Content-Type": "application/json",
     },
   });
-
+  restrictions = [];
+  ingredients = [];
   const text = await response.json();
   const suggestion = encodeURI(text.suggestion).toString();
   document.location.replace(`/newsuggestion?suggestion=${suggestion}`);
