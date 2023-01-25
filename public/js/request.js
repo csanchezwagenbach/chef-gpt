@@ -142,6 +142,8 @@ function reload() {
 }
 
 async function sendRequest() {
+  restrictions = [];
+  ingredients = [];
   displayLoading();
   const response = await fetch(`/makesuggestion`, {
     method: "POST",
