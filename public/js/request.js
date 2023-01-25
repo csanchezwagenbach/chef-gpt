@@ -131,10 +131,7 @@ function generateConfirmations() {
 
 function displayLoading() {
   wholeForm.innerHTML = `<div class = "row align-items-center justify-content-center w-100 bg-white"> <img id="loading" src="images/chef.jpg" alt="Chef-GPT" class="col-12 display"> </div>`;
-  bod.style.removeProperty("background-image");
-  bod.style.removeProperty("background-repeat");
-  bod.style.removeProperty("background-attachment");
-  bod.style.removeProperty("background-size");
+  bod.style.background="none";
 }
 
 function reload() {
