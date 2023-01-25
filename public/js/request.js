@@ -138,6 +138,8 @@ function displayLoading() {
 }
 
 function reload() {
+  restrictions = [];
+  ingredients = [];
   document.location.reload();
 }
 
