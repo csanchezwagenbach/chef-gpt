@@ -26,7 +26,8 @@ const notQuite = document.querySelector("#not-quite");
 
 const loader = document.querySelector("#loading");
 const wholeForm = document.querySelector("#whole-form");
-const bod = document.querySelector("#bod");
+const main = document.querySelector("#main-container");
+const confirmModal = document.querySelector("#confirmModal");
 
 let ingredients = [];
 let restrictions = [];
@@ -130,17 +131,18 @@ function generateConfirmations() {
 
 function displayLoading() {
   wholeForm.innerHTML = `<div class = "row align-items-center justify-content-center w-100 bg-white"> <img id="loading" src="images/chef.jpg" alt="Chef-GPT" class="col-12 display"> </div>`;
-  bod.style.removeProperty("background-image");
-  bod.style.removeProperty("background-repeat");
-  bod.style.removeProperty("background-attachment");
-  bod.style.removeProperty("background-size");
+  bod.style.background="none";
 }
 
 function reload() {
+  restrictions = [];
+  ingredients = [];
   document.location.reload();
 }
 
 async function sendRequest() {
+  restrictions = [];
+  ingredients = [];
   displayLoading();
   const response = await fetch(`/makesuggestion`, {
     method: "POST",

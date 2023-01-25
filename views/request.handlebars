@@ -1,10 +1,11 @@
 <div id="whole-form">
   <div class="row">
-    <div class="col-12 col-md-4 col-lg-4 shadow p-3 bg-white">
+    <div class="col-12 col-md-4 col-lg-4 shadow p-3 bg-white mb-2">
       <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Add ingredient" aria-label="ingredient"
           aria-describedby="button-addon2" id="ingredient-input" />
-        <button class="btn-add btn-outline-secondary text-white btn-mariano" type="button" id="add-ingredient">Add</button>
+        <button class="btn-add btn-outline-secondary text-white btn-mariano" type="button"
+          id="add-ingredient">Add</button>
       </div>
 
       <p>
@@ -47,28 +48,32 @@
           <option value="Keto" data-number="9">Keto</option>
           <option value="Paleo" data-number="10">Paleo</option>
         </select>
-        <button class="btn-add btn-outline-secondary text-white btn-mariano" type="button" id="add-restriction">Add</button>
+        <button class="btn-add btn-outline-secondary text-white btn-mariano" type="button"
+          id="add-restriction">Add</button>
       </div>
 
     </div>
 
-    <div class="col-12 col-md-4 col-lg-4">
-      <div class="card-header justify-content text-center list-group-item-success">
-        <h4>🧂 Your Ingredients</h4>
+    <div class="col-12 col-md-4 col-lg-4 mb-2">
+      <div class="card">
+        <div class="card-header justify-content text-center list-group-item-success">
+          <h4>🧂 Your Ingredients</h4>
+        </div>
+        <ul class="list-group list-group-flush ms-2">
+          <li class="list-group-item " id="ingredient-list"></li>
+        </ul>
       </div>
-      <ul class="list-group list-group-flush ">
-        <li class="list-group-item " id="ingredient-list"></li>
-      </ul>
-
     </div>
-    <div class="col-12 col-md-4 col-lg-4">
+    <div class="col-12 col-md-4 col-lg-4 mb-2">
+      <div class="card">
       <div class="card-header justify-content text-center list-group-item-success">
         <h4>❌ Meal Restrictions</h4>
       </div>
-      <ul class="list-group list-group-flush">
+      <ul class="list-group list-group-flush ms-2">
         <li class="list-group-item" id="restriction-list">
         </li>
       </ul>
+      </div>
     </div>
   </div>
 
@@ -88,28 +93,29 @@
         </div>
         <div class="modal-body list-group-item list-group-item-success">
           <ul class="list-group">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-4">
-                <h6>Ingredients</h6>
-                <li class="list-group list-group-flush" id="confirm-ingredient-list">
-                </li>
-              </div>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-4">
+                  <h6>Ingredients</h6>
+                  <li class="list-group list-group-flush" id="confirm-ingredient-list">
+                  </li>
+                </div>
 
-              <div class="col-4">
-                <h6>Restrictions</h6>
-                <li id="confirm-restriction-list">
+                <div class="col-4">
+                  <h6>Restrictions</h6>
+                  <li id="confirm-restriction-list">
 
-                </li>
-              </div>
+                  </li>
+                </div>
 
-              <div class="col-4" id="confirm-details">
-                <h6>Additional Details</h6>
+                <div class="col-4" id="confirm-details">
+                  <h6>Additional Details</h6>
 
+                </div>
               </div>
             </div>
-          </div>
-        </div></ul>
+        </div>
+        </ul>
         <div class="modal-footer justify-content-center text-center">
           <button type="button" class="btn btn-secondary" id="not-quite" data-bs-dismiss="modal">Not quite</button>
           <button type="button" class="btn btn-primary" id="yes-chef">Yes, Chef! 🧑‍🍳</button>
@@ -118,4 +124,3 @@
     </div>
   </div>
 </div>
-
